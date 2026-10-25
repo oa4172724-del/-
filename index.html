@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>مكتبة إياد ونيدال</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Tahoma,Arial,sans-serif;background:#f4f7ff;color:#172033}header,footer{padding:18px;text-align:center;background:white}main{max-width:1000px;margin:auto;padding:20px}.hero{background:linear-gradient(120deg,#1d4ed8,#60a5fa);color:white;padding:35px;border-radius:22px}.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:15px;margin:24px 0}.card,.panel{background:white;padding:20px;border-radius:16px;border:1px solid #ddd}.emoji{font-size:38px}.price{color:#2563eb;font-weight:bold}.btn{border:0;border-radius:12px;padding:12px 18px;background:#25d366;color:white;font-weight:bold;cursor:pointer;text-decoration:none;display:inline-block}.toggle{background:#334155}label{display:block;margin:14px 0 6px;font-weight:bold}input,textarea{width:100%;padding:12px;border:1px solid #bbb;border-radius:10px;font:inherit}body.dark{background:#111827;color:#f3f4f6}body.dark header,body.dark footer,body.dark .card,body.dark .panel{background:#1f2937;border-color:#374151}body.dark input,body.dark textarea{background:#111827;color:white;border-color:#555}.order{max-width:650px;margin:30px auto}@media(max-width:600px){.hero{padding:22px}}
+</style></head>
+<body><header><strong>📚 مكتبة إياد ونيدال</strong>　<button class="btn toggle" id="theme">🌙 الوضع المظلم</button></header>
+<main><section class="hero"><h1>كل مستلزمات المدرسة في مكان واحد</h1><p>كشاكيل وأقلام وألوان وملفات. اختار احتياجاتك واطلب بسهولة.</p><a class="btn" href="#order" style="background:white;color:#1d4ed8">اطلب دلوقتي 🛒</a></section>
+<h2>منتجاتنا</h2><div class="products">
+<div class="card"><div class="emoji">📓</div><h3>كشاكيل وكراسات</h3><p class="price">تبدأ من 15 جنيه</p></div>
+<div class="card"><div class="emoji">🖊️</div><h3>أقلام</h3><p class="price">تبدأ من 5 جنيه</p></div>
+<div class="card"><div class="emoji">🎨</div><h3>ألوان وأدوات رسم</h3><p class="price">أسعار متنوعة</p></div>
+<div class="card"><div class="emoji">📁</div><h3>ملفات وحافظات أوراق</h3><p class="price">تبدأ من 12 جنيه</p></div></div>
+<p>الأسعار تقديرية وقد تختلف حسب النوع والتوافر.</p>
+<section class="order panel" id="order"><h2>اطلب منتجاتك</h2><p>اكتب بياناتك وتفاصيل الطلب، وسيتم فتح واتساب برسالة جاهزة.</p>
+<form id="orderForm"><label for="name">الاسم بالكامل *</label><input id="name" required>
+<label for="phone">رقم الموبايل *</label><input id="phone" required inputmode="tel" placeholder="01012345678">
+<label for="address">العنوان بالتفصيل *</label><input id="address" required>
+<label for="details">تفاصيل الطلب *</label><textarea id="details" rows="5" required placeholder="اكتب المنتجات والكميات"></textarea><p><button class="btn" type="submit">إرسال الطلب على واتساب 🚀</button></p><p id="error"></p></form></section></main>
+<footer>📚 مكتبة إياد ونيدال · الحامول، مصر<br>واتساب: 01030303301</footer>
+<script>
+document.getElementById('theme').onclick=function(){document.body.classList.toggle('dark');this.textContent=document.body.classList.contains('dark')?'☀️ الوضع الفاتح':'🌙 الوضع المظلم'};
+document.getElementById('orderForm').onsubmit=function(e){e.preventDefault();let n=document.getElementById('name').value.trim(),p=document.getElementById('phone').value.trim(),a=document.getElementById('address').value.trim(),d=document.getElementById('details').value.trim();if(!/^(?:(?:\+20|0020)|0)?1[0125][0-9]{8}$/.test(p.replace(/[\s()-]/g,''))){document.getElementById('error').textContent='اكتب رقم موبايل مصري صحيح.';return}let msg=`طلب جديد من مكتبة إياد ونيدال\nالاسم: ${n}\nالموبايل: ${p}\nالعنوان: ${a}\nتفاصيل الطلب: ${d}`;location.href='https://wa.me/201030303301?text='+encodeURIComponent(msg)};
+</script></body></html>
